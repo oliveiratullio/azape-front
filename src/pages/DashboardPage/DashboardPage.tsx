@@ -119,6 +119,7 @@ function DashboardPage() {
     }
   }
   const { orders_count, orders_total, sales_count, sales_total, average_ticket } = orders;
+
   
   return (
     <>
@@ -142,7 +143,7 @@ function DashboardPage() {
                   />
                 </IconCircle>
                 <h2>{loading ? "Carregando..." : orders_count} Pedidos</h2>
-                <h1>R$ {loading ? "Carregando..." : orders_total}</h1>
+                <h1>R$ {loading ? "Carregando..." : formatCurrency(orders_total)}</h1>
               </ResumeItem>
               <ResumeItem>
                 <IconCircle color="#B6EEDD">
@@ -155,7 +156,7 @@ function DashboardPage() {
                   />
                 </IconCircle>
                 <h2>{loading ? "Carregando..." : sales_count} Vendas</h2>
-                <h1>R$ {loading ? "Carregando..." : sales_total}</h1>
+                <h1>{loading ? "Carregando..." : formatCurrency(sales_total)}</h1>
               </ResumeItem>
               <ResumeItem>
                 <IconCircle color="#C3E7F3">
@@ -168,7 +169,7 @@ function DashboardPage() {
                   />
                 </IconCircle>
                 <h2>Ticket médio</h2>
-                <h1>R$ {loading ? "Carregando..." : average_ticket}</h1>
+                <h1>{loading ? "Carregando..." : formatCurrency(Number(average_ticket))}</h1>
               </ResumeItem>
             </ResumeBox>
             <TableBox>
