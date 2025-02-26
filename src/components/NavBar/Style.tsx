@@ -9,7 +9,7 @@ export const Container = styled.div`
     background-color: #FFFFFF;
     justify-content: space-between;
     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.05);
-    z-index: 1;
+    z-index: 2;
 `;
 
 export const LogoContainer = styled.div`

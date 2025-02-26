@@ -2,21 +2,19 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: #f5f5f5;
+  background-color: #F5F5F5;
 `;
 
 export const Content = styled.div`
   min-width: calc(100% - 250px);
-  min-height: calc(100vh - 80px);
+  min-height: 100vh;
+  margin-top: 80px;
+  margin-left: 250px;
   display: flex;
   flex-direction: column;
-  position: absolute;
-  top: 80px;
-  left: 250px;
-  overflow: hidden;
 `;
 
 export const TextBox = styled.div`
@@ -34,8 +32,8 @@ export const TextBox = styled.div`
 `;
 
 export const DataBox = styled.div`
-  width: 1110px;
-  height: calc(80vh - 56px);
+  width: 1450px;
+  height: auto;
   margin: 49px 0 0 40px;
   display: flex;
   flex-direction: column;

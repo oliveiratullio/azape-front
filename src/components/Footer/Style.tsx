@@ -3,12 +3,13 @@ import styled from "styled-components";
 export const Container = styled.div`
   width: 100%;
   height: 56px;
+  padding-left: 250px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: #F5F5F5;
-  position: absolute;
   bottom: 0;
+  position: relative;
 `;
 
 export const Side = styled.div`

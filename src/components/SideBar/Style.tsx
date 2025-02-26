@@ -2,19 +2,23 @@ import styled from "styled-components";
 
 export const Container = styled.div`
     width: 250px;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: #FFFFFF;
     box-shadow: 2px 0px 4px 0px rgba(0, 0, 0, 0.05);
-    position: absolute;
+    position: fixed;
+    top:0;
+    left: 0;
+    z-index: 1;
 `;
 
 export const Dashboard = styled.div`
     width: 218px;
     height: 48px;
-    margin-top: 104px;
+    top: 104px;
+    left: 16px;
     display: flex;
     align-items: center;
     font-size: 14px;
@@ -23,6 +27,8 @@ export const Dashboard = styled.div`
     background-color: #FE7C6E;
     color: #FFFFFF;
     padding: 0 16px;
+    position: absolute;
+    z-index: 1;
 `;
 
 export const Icon = styled.div`

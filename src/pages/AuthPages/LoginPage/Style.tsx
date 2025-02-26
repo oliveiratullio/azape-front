@@ -42,16 +42,7 @@ export const Form = styled.form`
     height: auto;
     display: flex;
     flex-direction: column;
-    input{
-        width: 100%;
-        height: 48px;
-        margin-bottom: 16px;
-        font-size: 14px;
-        line-height: 21px;
-        padding-left: 8px;
-        border: 1px solid #E6E6E6;
-        border-radius: 8px;
-    }
+    
     button{
         width: 100%;
         height: 48px;
@@ -61,7 +52,7 @@ export const Form = styled.form`
         color: #FFFFFF;
         font-size: 14px;
         line-height: 21px;
-        font-weight: 700; 
+        font-weight: 700;
     }
 `
 
@@ -79,4 +70,46 @@ export const LoginLink = styled.span`
     &:hover {
         text-decoration: underline;
     }
+`;
+
+export const Footer = styled.div`
+    width: 50%;
+    height: 56px;
+    padding-left: 24px;
+    display: flex;
+    align-items: center;
+    background-color: #FFFFFF;
+    bottom: 0;
+    position: absolute;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14px;
+    color: #97A1A8;
+`;
+
+
+
+export const InputContainer = styled.div`
+    position: relative;
+    width: 100%;
+    margin-bottom: 16px;
+`;
+
+export const InputBox = styled.input`
+    width: 100%;
+    height: 48px;
+    font-size: 14px;
+    line-height: 21px;
+    padding: 0 40px 0 8px;
+    border: 1px solid #E6E6E6;
+    border-radius: 8px;
+`;
+
+export const IconToggle = styled.div`
+    position: absolute;
+    right: 10px;
+    top: 24px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #ccc;
 `;

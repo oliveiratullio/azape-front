@@ -13,31 +13,65 @@ function OrdersTable({ columns, data }: OrdersTableProps) {
     });
 
   return (
-    <Styles>
-      <table {...getTableProps()}>
-        <thead>
-          {headerGroups.map((headerGroup) => (
-            <tr {...headerGroup.getHeaderGroupProps()}>
-              {headerGroup.headers.map((column) => (
-                <th {...column.getHeaderProps()}>{column.render("Header")}</th>
-              ))}
-            </tr>
-          ))}
-        </thead>
-        <tbody {...getTableBodyProps()}>
-          {rows.map((row) => {
-            prepareRow(row);
-            return (
-              <tr {...row.getRowProps()}>
-                {row.cells.map((cell) => (
-                  <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
+    <>
+      <Styles>
+        <table {...getTableProps()}>
+          <thead>
+            {headerGroups.map((headerGroup) => (
+              <tr {...headerGroup.getHeaderGroupProps()}>
+                {headerGroup.headers.map((column) => (
+                  <th {...column.getHeaderProps()}>{column.render("Header")}</th>
                 ))}
               </tr>
-            );
-          })}
-        </tbody>
-      </table>
-    </Styles>
+            ))}
+          </thead>
+          <tbody {...getTableBodyProps()}>
+            {rows.map((row) => {
+              prepareRow(row);
+              return (
+                <tr {...row.getRowProps()}>
+                  {row.cells.map((cell) => (
+                    <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
+                  ))}
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </Styles>
+      <Pagination>
+        <ItemDiv>
+        <NumberDiv color="#FE7C6E" >
+          {"<<"}
+        </NumberDiv>
+        <NumberDiv color="#FE7C6E" >
+          {"<"}
+        </NumberDiv>
+        <NumberDiv><Circle><h1>1</h1></Circle></NumberDiv>
+        <NumberDiv>2</NumberDiv>
+        <NumberDiv>3</NumberDiv>
+        <NumberDiv>4</NumberDiv>
+        <NumberDiv>5</NumberDiv>
+        <NumberDiv color="#FE7C6E" >
+          {">"}
+        </NumberDiv>
+        <NumberDiv color="#FE7C6E" >
+          {">>"}
+        </NumberDiv>
+        </ItemDiv>
+        <PageDisplay>1 de 10 páginas</PageDisplay>
+        <SelectDiv>
+          <h2>Linhas por página</h2>
+          <select>
+            {[20, 10, 30, 40, 50].map((pageSize) => (
+              <option key={pageSize} value={pageSize}>
+                {pageSize}
+              </option>
+            ))}
+          </select>
+        </SelectDiv>
+      </Pagination>
+    </>
   );
 }
 
@@ -101,3 +135,82 @@ const Styles = styled.div`
     }
   }
 `;
+const Pagination = styled.div`
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #F5F5F5;
+  border-top: 1px solid #e5e5e5;
+  button{
+    width: 20px;
+    color: #FE7C6E;
+  }
+`;
+
+const Circle = styled.div`
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #FE7C6E;
+  h1{
+    color: #FFFFFF;
+  }
+`;
+
+const PageDisplay = styled.div`
+  width: 200px;
+  height: 21px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 400;
+  color: #97A1A8;
+`;
+
+const NumberDiv = styled.div`
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: ${(props) => props.color || "#97A1A8"};
+`;
+
+const ItemDiv = styled.div`
+  width: 500px;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`
+const SelectDiv = styled.div`
+  width: 500px;
+  height: 50px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  color: #97A1A8;
+  select{
+    width: 90px;
+    height: 32px;
+    padding: 0 15px 0 15px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 8px;
+    border: 1px solid #E6E6E6;
+    font-size: 12px;
+    font-weight: 400;
+    margin-right: 10px;
+  }
+  h2{
+    font-size: 14px;
+    margin-right: 10px;
+  }
+`

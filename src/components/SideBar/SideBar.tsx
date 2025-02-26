@@ -3,14 +3,16 @@ import { Container, Dashboard, Icon } from "./Style";
 
 function SideBar() {
     return (
-        <Container>
-            <Dashboard>
-                <Icon>
-                    <PiChartBar />
-                </Icon>
-                Dashboard
-            </Dashboard>
+        <>
+        <Container>    
         </Container>
+        <Dashboard>
+            <Icon>
+                <PiChartBar />
+            </Icon>
+            Dashboard
+        </Dashboard>
+        </>
     )
 }
 
