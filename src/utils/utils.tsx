@@ -14,22 +14,23 @@ export  function formatCurrency(value: number) {
     return `R$ ${value.toFixed(2).replace('.', ',').replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.')}`;
   }
   
-  type StatusKey = 'paid' | 'sent' | 'pending' | 'canceled' | 'delivered' | 'succeeded' | 'Aprovada';
-
-  const statusTranslations: Record<StatusKey, string> = {
-    paid: "Pagamento Aprovado",
-    sent: "Enviado",
-    pending: "Pendente",
-    canceled: "Cancelado",
-    delivered: "Entregue",
-    succeeded: "Aprovado",
-    Aprovada: "Aprovado"
-  };
-    
-  export function translateStatus(status: StatusKey) {
-    return statusTranslations[status] || status;
-  }
   
+export type StatusKey = 'paid' | 'sent' | 'pending' | 'canceled' | 'delivered' | 'succeeded' | 'Aprovada';
+
+
+export function translateStatus(status: StatusKey) {
+    const statusTranslations: Record<StatusKey, string> = {
+        paid: "Pagamento Aprovado",
+        sent: "Enviado",
+        pending: "Pendente",
+        canceled: "Cancelado",
+        delivered: "Entregue",
+        succeeded: "Aprovado",
+        Aprovada: "Aprovado"
+    };
+    return statusTranslations[status] || status;
+}
+
   
   export function translatePaymentMethod(method: string | number) {
     const methodTranslations: { [key: string]: string } = {

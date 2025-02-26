@@ -19,7 +19,7 @@ import Footer from "../../components/Footer/Footer";
 import useAuth from "../../hooks/useAuth";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { formatCPForCNPJ, formatCurrency, formatName, translatePaymentMethod, translateStatus } from "../../utils/utils";
+import { formatCPForCNPJ, formatCurrency, formatName, StatusKey, translatePaymentMethod, translateStatus } from "../../utils/utils";
 
 function DashboardPage() {
   const { auth } = useAuth();
@@ -104,8 +104,8 @@ function DashboardPage() {
           creationDate: new Date(order.createdAt).toLocaleDateString(),
           customerName: formatName(order.customer.name),
           customerCpfCnpj: formatCPForCNPJ(order.customer.doc),
-          orderStatus: translateStatus(order.status),
-          paymentStatus: translateStatus(order.payment.status),
+          orderStatus: translateStatus(order.status as StatusKey),
+          paymentStatus: translateStatus(order.payment.status as StatusKey),
           paymentMethod: translatePaymentMethod(order.payment.method),
           total: formatCurrency(order.payment.amount)
         }));
