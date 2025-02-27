@@ -112,7 +112,6 @@ function DashboardPage() {
         
         setData(formattedData);
       setOrders(response.data);
-      console.log(response.data);
       setLoading(false)
     } catch (error) {
       console.error("Erro ao buscar os pedidos:", error);
